@@ -52,7 +52,7 @@ bool Solution()
 {
 	int move[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 	stack<pair<int, int>> s;
-	stack<pair<int, int>> track;
+	// stack<pair<int, int>> track;
 	x = y = 1;
 	pair<int, int> pos = {x, y};
 	s.push(pos);
@@ -83,16 +83,17 @@ bool Solution()
 				pos.first += move[i][0];
 				pos.second += move[i][1];
 				s.push(pos);
-				track.push(pair<int,int>(move[i][0],move[i][1]));
+				// track.push(pair<int,int>(move[i][0],move[i][1]));
 				maze[pos.first][pos.second] = -1;
 				break;
 			}
 			if (i==3)
 			{
-				pos.first -= track.top().first;
-				pos.second -= track.top().second;
-				track.pop();
+				// pos.first -= track.top().first;
+				// pos.second -= track.top().second;
+				// track.pop();
 				s.pop();
+				pos = s.top();
 				// return false;
 			}
 		}
